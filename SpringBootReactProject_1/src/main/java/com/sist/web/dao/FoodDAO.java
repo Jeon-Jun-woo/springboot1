@@ -11,6 +11,8 @@ public interface FoodDAO extends JpaRepository<Food, Integer>{
 			+"ORDER BY fno DESC LIMIT :start,12",nativeQuery = true)
 	public List<Food> foodsListData(@Param("start") int start);
 	
+	
+	
 	@Query(value = "SELECT * FROM food_house "
 			+"WHERE address LIKE CONCAT('%',:address,'%') "
 			+"ORDER BY fno ASC LIMIT :start,12",nativeQuery = true)
